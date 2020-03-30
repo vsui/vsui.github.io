@@ -14,7 +14,7 @@
       // Just `parseInt` does not work...
       const intervalPrices = intervalPricesStr.split(',').map(x => parseInt(x));
 
-      const X = buyPrice / intervalPrices[0];
+      const X = intervalPrices[0] / buyPrice;
 
       const results = document.getElementById('results')
 
