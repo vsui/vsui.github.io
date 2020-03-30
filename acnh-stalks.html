@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>ACNH Stalk Trend Type Calculator</title>
+  </head>
+  <body>
+  <script>
+    function onSubmit() {
+      const buyPriceStr = document.getElementById('buy-price').value
+      const intervalPricesStr = document.getElementById('interval-prices').value
+
+      const buyPrice = parseInt(buyPriceStr);
+      console.log(intervalPricesStr.split(','))
+
+      // Just `parseInt` does not work...
+      const intervalPrices = intervalPricesStr.split(',').map(x => parseInt(x));
+
+      const X = buyPrice / intervalPrices[0];
+
+      const results = document.getElementById('results')
+
+      if (X >= 0.91) {
+        results.textContent = "Type 1 or 4"
+      } else if (X >= 0.85) {
+        results.textContent = "Type 2, 3, or 4"
+      } else if (X >= 0.80) {
+        results.textContent = "Type 3 or 4"
+      } else {
+        results.textContent = "Type 4"
+      }
+
+      return false;
+    }
+  </script>
+    <img src="nook.jpg" alt="Tom Nook" width="30">
+    <h1>ACNH Stalk Price Calculator</h1>
+
+    <form onsubmit="return onSubmit()">
+      <label for="buy-price">Buy price</label>
+      <input type="text" id="buy-price" placeholder="102"><br>
+      <label for="interval-prices">Interval prices</label>
+      <input type="text" id="interval-prices" placeholder="91,86,83,78"><br>
+      <input type="submit" value="Submit">
+    </form>
+    <div id="results"></div>
+
+    <a href="https://www.reddit.com/r/AnimalCrossing/comments/fr2cuq/guide_how_to_beat_the_stock_turnip_market_playing/">explanation</a>
+  </body>
+</html>
