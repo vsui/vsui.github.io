@@ -1,0 +1,15 @@
+{
+  "name": "elite-tesla-transfers",
+  "version": "1.0.0",
+  "description": "Unit tests for Elite Tesla Transfers website",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
